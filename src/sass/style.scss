@@ -1,4 +1,5 @@
 @use 'nav';
+@use 'animal';
 @use 'variables' as v;
 @use 'mixins';
 
@@ -64,13 +65,6 @@ article {
   margin: 0;
 }
 
-/* title all components - ej header */
-.hedingComponent {
-  padding: 0;
-  margin: 0;
-  font-size: v.$font-big;
-
-}
 
 
 
@@ -79,20 +73,20 @@ article {
   width: 100%;
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-items: center;
-  margin-top: v.$padding-element-heigth;
+
 
 }
 
 /* standard container flex */
 .standardContainer {
+  height:calc(98% - (v.$padding-element-heigth * 2 ));
   width: calc(100% - (v.$padding-element-width * 2));
   display: flex;
   padding: v.$padding-element-heigth v.$padding-element-width;
-  margin-top: v.$padding-element-heigth;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   background-color: rgba(188, 142, 237, 0.178);
 
 }

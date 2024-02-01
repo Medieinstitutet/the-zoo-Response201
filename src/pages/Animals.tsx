@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import { GetAnimalData } from '../component/GetAnimalData';
 import { AnimalModel } from '../models/AnimalModel';
+import { Animal } from './Animal';
 
 
 const Animals = () => {
+    
+   const  [storedAnimals, setStoredAnimals] = useState<AnimalModel[]>(JSON.parse(localStorage.getItem("animals")  || '[]') )
 
-   const [storedAnimals, setStoredAnimals] = useState<AnimalModel[]>(JSON.parse(localStorage.getItem("animals")  || '{}') )
-if(!storedAnimals){GetAnimalData()}
+console.log(storedAnimals)
 
-
-
+if(storedAnimals){
 
 
   return (<article>Animals
@@ -23,7 +24,16 @@ if(!storedAnimals){GetAnimalData()}
      
           return (
           <section key={animalItem.id}>
-     <p> {animalItem.name} </p>
+
+
+
+<Animal 
+idAnimal={animalItem.id}
+    name={animalItem.name}
+    shortDescription={animalItem.shortDescription}
+    imageUrl={animalItem.imageUrl}
+    isFed={animalItem.isFed}
+    lastFed={animalItem.lastFed} />
           </section>
 )
         
@@ -39,7 +49,7 @@ if(!storedAnimals){GetAnimalData()}
 
 
 
-  </article>)
+  </article>)}
 }
 
 export default Animals

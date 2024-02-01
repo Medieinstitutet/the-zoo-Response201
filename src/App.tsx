@@ -4,9 +4,10 @@ import Home from './pages/Home';
 import NoPage from './pages/NoPage';
 import Nav from './component/Nav';
 import Animals from "./pages/Animals";
+import { GetAnimalData } from "./component/GetAnimalData";
 
 function App() {
-
+  GetAnimalData()
 
   return (
     <Routes>
