@@ -1,0 +1,98 @@
+@use 'nav';
+@use 'variables' as v;
+@use 'mixins';
+
+
+
+
+#root,
+body {
+
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  color: rgb(11, 11, 11);
+  background-image: linear-gradient(to right bottom, #f9e5f1, #f4e1f2, #ecddf4, #e3daf6, #d7d8f7, #cedaf9, #c5dbf9, #bcddf7, #bae1f4, #bae4f0, #bee7eb, #c4e9e6);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -ms-overflow-style: none;
+  font-size: clamp(10px, 0.5vw + 1rem, 25px);
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+/* Global styling */
+
+
+a {
+  all: unset;
+}
+
+.link {
+  font-weight: 600;
+  color: #121111;
+  text-decoration: inherit;
+}
+
+.link:focus {
+  font-weight: 600;
+  color: #000000;
+  text-shadow: 0px 0px 5px rgba(132, 12, 238, 0.651);
+  text-decoration: inherit;
+}
+
+article {
+  /* width 100% minus paddingen(--padding-container) som finns samt minus 4px för border */
+  width: calc(100% - (v.$padding-article-width * 2) - 4px);
+  min-height: 90vh;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 v.$padding-article-width;
+  margin: 0;
+}
+
+/* title all components - ej header */
+.hedingComponent {
+  padding: 0;
+  margin: 0;
+  font-size: v.$font-big;
+
+}
+
+
+
+.manyObjectsContainer {
+
+  width: 100%;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
+  margin-top: v.$padding-element-heigth;
+
+}
+
+/* standard container flex */
+.standardContainer {
+  width: calc(100% - (v.$padding-element-width * 2));
+  display: flex;
+  padding: v.$padding-element-heigth v.$padding-element-width;
+  margin-top: v.$padding-element-heigth;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(188, 142, 237, 0.178);
+
+}
