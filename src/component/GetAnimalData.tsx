@@ -7,7 +7,6 @@ import { AnimalModel } from '../models/AnimalModel';
 export const GetAnimalData = () => {
     const [animals, setAnimals] = useState<AnimalModel[]>(JSON.parse(localStorage.getItem("animals")  || '[]') )
 
-console.log(animals.length)
 
     useEffect(() => {
 if(animals.length >= 1) return;
@@ -26,6 +25,7 @@ if (shouldUpdate) {
           }))
         )
       );
+      setAnimals(JSON.parse(localStorage.getItem("animals")  || '[]'))
 }}
     
 let shouldUpdate = true;

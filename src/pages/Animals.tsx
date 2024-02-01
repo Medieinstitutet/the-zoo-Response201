@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { GetAnimalData } from '../component/GetAnimalData';
 import { AnimalModel } from '../models/AnimalModel';
 import { Animal } from './Animal';
@@ -6,11 +6,11 @@ import { Animal } from './Animal';
 
 const Animals = () => {
     
-   const  [storedAnimals, setStoredAnimals] = useState<AnimalModel[]>(JSON.parse(localStorage.getItem("animals")  || '[]') )
+const  [storedAnimals, setStoredAnimals] = useState<AnimalModel[]>(JSON.parse(localStorage.getItem("animals")  || '[]') )
 
-console.log(storedAnimals)
+const animalMemo = useMemo(() =>  storedAnimals, [storedAnimals])
 
-if(storedAnimals){
+if(animalMemo){
 
 
   return (<article>Animals
@@ -20,7 +20,7 @@ if(storedAnimals){
 
 
 
-{storedAnimals.map((animalItem) => {
+{animalMemo.map((animalItem) => {
      
           return (
           <section key={animalItem.id}>
@@ -34,7 +34,7 @@ idAnimal={animalItem.id}
     imageUrl={animalItem.imageUrl}
     isFed={animalItem.isFed}
     lastFed={animalItem.lastFed} />
-          </section>
+    </section>
 )
         
       })}
