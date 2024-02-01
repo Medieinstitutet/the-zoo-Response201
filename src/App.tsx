@@ -5,6 +5,8 @@ import NoPage from './pages/NoPage';
 import Nav from './component/Nav';
 import Animals from "./pages/Animals";
 import { GetAnimalData } from "./component/GetAnimalData";
+import { Animal } from "./component/Animal";
+import OneAnimal from "./pages/OneAnimal";
 
 function App() {
   GetAnimalData()
@@ -14,7 +16,7 @@ function App() {
     <Route path="/" element={<Nav   /> } errorElement={ <NoPage/> }>
     <Route index element={<Home />} />
    <Route path="animals" element={<Animals />} />
-   {/*    <Route path="/:id" element={<Product  />} />  */}
+      <Route path="/:id" element={<OneAnimal  />} />  
   
       <Route path="*" element={<NoPage />} />
     </Route>

@@ -8,7 +8,7 @@ const Home = () => {
   
   <article> 
 
-<h2 className='hedingComponent'>Home</h2>
+<section className='manyObjectsContainer'>
 
 <section className='standardContainer'> hello</section>
 
@@ -21,6 +21,7 @@ const Home = () => {
 <section className='standardContainer'> hello</section>
 
 <section className='standardContainer'> hello</section>
+</section>
   </article>)
  
 }

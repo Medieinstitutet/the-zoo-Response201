@@ -1,5 +1,6 @@
 @use 'nav';
 @use 'animal';
+@use 'oneAnimalPage';
 @use 'variables' as v;
 @use 'mixins';
 
@@ -22,7 +23,7 @@ body {
   flex-direction: column;
   align-items: center;
   -ms-overflow-style: none;
-  font-size: clamp(10px, 0.5vw + 1rem, 25px);
+
   font-family: 'Times New Roman', Times, serif;
 
 }
@@ -56,12 +57,13 @@ a {
 article {
   /* width 100% minus paddingen(--padding-container) som finns samt minus 4px för border */
   width: calc(100% - (v.$padding-article-width * 2) - 4px);
-  min-height: 90vh;
+  height: calc(100% - (v.$padding-article-width * 2) - 4px);
+  min-height: calc(90vh - (v.$padding-article-width ) - 4px);
   overflow-y: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 0 v.$padding-article-width;
+  padding:  v.$padding-article-width;
   margin: 0;
 }
 
@@ -69,24 +71,33 @@ article {
 
 
 .manyObjectsContainer {
-
   width: 100%;
   display: grid;
-  gap: 2rem;
+  gap: 3rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-items: center;
+padding:  v.$padding-element-heigth 0;
+  @include mixins.devices(tablet) {
 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+
+
+  }
 
 }
 
 /* standard container flex */
 .standardContainer {
-  height:calc(98% - (v.$padding-element-heigth * 2 ));
+  height:calc(100% - (v.$padding-element-heigth * 2 ));
   width: calc(100% - (v.$padding-element-width * 2));
+  max-width: 1000px;
+  margin: 0;
   display: flex;
   padding: v.$padding-element-heigth v.$padding-element-width;
   justify-content: space-between;
   align-items: start;
-  background-color: rgba(188, 142, 237, 0.178);
-
+  background-color: rgba(188, 142, 237, 0.073);
+  border-radius:  v.$border-radius;
+  box-shadow: #00000039 5px 4px 10px, inset 2px 2px 20px rgba(255, 255, 255, 0.281), inset -2px -2px 5px rgba(28, 28, 28, 0.433);
 }

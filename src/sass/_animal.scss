@@ -4,30 +4,84 @@
 .animalContainer{
 flex-direction: column;
 
-p, h2{
-    margin: 15px 0;
+p{
+    padding: 0 0 1rem 0;
+    margin: 0;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+ }
 
-}
+&___nameAndImg{
+    width: 100%;
+
+    p, h2{
+        padding: 0 0 .2rem 0;
+        margin: 0;
+      
+     }
+
+
 h2{
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
     height: 3rem;
     width: 100%; text-align: center;}
+&__latinName{
+font-size: clamp(0.7rem, 2vw, 1rem);
+font-style: italic;
+font-weight: 400;
 
+
+
+}
     
 &___imgContainer{
     overflow: hidden;
    min-height: 10rem;
-    max-height: 400px;
+    max-height: 350px;
     width: 100%;
     aspect-ratio: 9/6;
-    border-radius: v.$border-radius;
     display: flex;
     justify-content: center;
-    padding: 0;
+    border-radius: v.$border-radius;
+    margin: 0 0 1rem 0;
+    border-top: v.$border-image;
+   border-bottom: v.$border-image;
     img {
       width: 100%;
+     
       object-fit: cover;
 object-position: center;
+filter: opacity(85%);
+
     }
 
+}}
+
+&___btnContainer, &___btnContainer--one{
+height: 50px;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+
+button{
+    height: 30px;
+width: clamp(1rem, 40%, 5rem);
+
 }
+
+&___hide{
+display: none;
+
+}
+
+}
+
+&___btnContainer--one{
+
+    justify-content: end;
+
+}
+
+
 }

@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import { GetAnimalData } from '../component/GetAnimalData';
 import { AnimalModel } from '../models/AnimalModel';
-import { Animal } from './Animal';
+import { Animal } from '../component/Animal';
 
 
 const Animals = () => {
@@ -13,7 +13,8 @@ const animalMemo = useMemo(() =>  storedAnimals, [storedAnimals])
 if(animalMemo){
 
 
-  return (<article>Animals
+  return (<article>
+    <h2>Alla våra djur</h2>
 
 
 <section className='manyObjectsContainer'> 
@@ -33,7 +34,9 @@ idAnimal={animalItem.id}
     shortDescription={animalItem.shortDescription}
     imageUrl={animalItem.imageUrl}
     isFed={animalItem.isFed}
-    lastFed={animalItem.lastFed} />
+    lastFed={animalItem.lastFed} 
+    showButton={true}
+    />
     </section>
 )
         
