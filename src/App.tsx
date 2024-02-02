@@ -16,8 +16,7 @@ function App() {
     <Route path="/" element={<Nav   /> } errorElement={ <NoPage/> }>
     <Route index element={<Home />} />
    <Route path="animals" element={<Animals />} />
-      <Route path="/:id" element={<OneAnimal  />} />  
-  
+      <Route path="animal/:id" element={<OneAnimal  />} />  
       <Route path="*" element={<NoPage />} />
     </Route>
   </Routes>

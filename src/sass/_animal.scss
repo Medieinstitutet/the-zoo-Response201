@@ -69,7 +69,11 @@ button{
 width: clamp(1rem, 40%, 5rem);
 
 }
+&___hollow{
 
+    filter: opacity(50%);
+
+}
 &___hide{
 display: none;
 

@@ -1,33 +1,18 @@
 import React, { useMemo, useState } from 'react'
-import { GetAnimalData } from '../component/GetAnimalData';
 import { AnimalModel } from '../models/AnimalModel';
 import { Animal } from '../component/Animal';
-
-
+import moment from 'moment';
+import { OnClickFeedAnimal } from '../function/OnClickFeedAnimal';
 const Animals = () => {
-    
-const  [storedAnimals, setStoredAnimals] = useState<AnimalModel[]>(JSON.parse(localStorage.getItem("animals")  || '[]') )
-
-const animalMemo = useMemo(() =>  storedAnimals, [storedAnimals])
-
-if(animalMemo){
+  const [animalList, setAnimalList] = useState<AnimalModel[]>(JSON.parse(localStorage.getItem("animals")  || '[]'))
 
 
   return (<article>
     <h2>Alla våra djur</h2>
-
-
 <section className='manyObjectsContainer'> 
-
-
-
-{animalMemo.map((animalItem) => {
-     
+{animalList.map((animalItem) => {
           return (
           <section key={animalItem.id}>
-
-
-
 <Animal 
 idAnimal={animalItem.id}
     name={animalItem.name}
@@ -36,23 +21,13 @@ idAnimal={animalItem.id}
     isFed={animalItem.isFed}
     lastFed={animalItem.lastFed} 
     showButton={true}
+    animalList={animalList}
+    setAnimalList={setAnimalList}
     />
     </section>
 )
-        
       })}
-
-
-
-
 </section>
-
-
-
-
-
-
   </article>)}
-}
 
 export default Animals

@@ -6,12 +6,11 @@ import { Animal } from '../component/Animal';
 
 
 const OneAnimal = () => {
-    const  [storedAnimals, setStoredAnimals] = useState<AnimalModel[]>(JSON.parse(localStorage.getItem("animals")  || '[]') )
-    const animalMemo = useMemo(() =>  storedAnimals, [storedAnimals])
+  const [animalList, setAnimalList] = useState<AnimalModel[]>(JSON.parse(localStorage.getItem("animals")  || '[]'))
     const { id } = useParams();
 
-if(animalMemo){
-    const animal:AnimalModel[] = animalMemo.filter((animalItem:AnimalModel) => {
+
+    const animal:AnimalModel[] = animalList.filter((animalItem:AnimalModel) => {
   if (id !== undefined && animalItem.id === +id) {
 return {...animalItem}
   }
@@ -27,7 +26,8 @@ return {...animalItem}
         if (animalItem) {
           return (
             <section key={animalItem.id}>
-        <Animal     idAnimal={animalItem.id}
+        <Animal     
+        idAnimal={animalItem.id}
 name={animalItem.name}
 latinName={animalItem.latinName}
 yearOfBirth={animalItem.yearOfBirth}
@@ -36,7 +36,9 @@ longDescription={animalItem.longDescription}
 imageUrl={animalItem.imageUrl}
 medicine={animalItem.medicine}
 isFed={animalItem.isFed}
-lastFed={animalItem.lastFed} showButton={false}                />
+lastFed={animalItem.lastFed} showButton={false}  
+animalList={animalList}
+setAnimalList={setAnimalList}              />
         </section>
 )
         }
@@ -48,6 +50,6 @@ lastFed={animalItem.lastFed} showButton={false}                />
 
 
   </article>)}
-}
+
 
 export default OneAnimal
