@@ -1,4 +1,7 @@
 import React from 'react'
+import { Heart } from '../component/Heart'
+
+
 
 
 
@@ -11,7 +14,11 @@ const Home = () => {
 
 <section className='manyObjectsContainer'>
 
-<section className='standardContainer'> hello</section>
+<section className='standardContainer'> 
+
+<Heart />
+
+</section>
 
 <section className='standardContainer'> hello</section>
 

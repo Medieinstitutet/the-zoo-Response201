@@ -5,6 +5,7 @@ import { AnimalModel } from '../models/AnimalModel';
 import { OnClickFeedAnimal } from '../function/OnClickFeedAnimal';
 import moment from 'moment';
 import { CheckHunger } from '../function/CheckHunger';
+import { Heart } from './Heart';
 interface Animal {
     idAnimal:number;
     name:string;
@@ -16,6 +17,7 @@ interface Animal {
     medicine?:string;
     isFed:boolean;
     lastFed: string;
+    feedStatut:string
 }
 interface Function{
   showButton:boolean;
@@ -23,7 +25,7 @@ interface Function{
   setAnimalList:  (animalList: AnimalModel[]) => void;
 }
 interface Props extends Animal, Function {}
-export const Animal = ({idAnimal, name,latinName,yearOfBirth,shortDescription,longDescription,imageUrl,medicine,isFed,lastFed,showButton,  setAnimalList, animalList}:Props ) => {
+export const Animal = ({idAnimal, name,latinName,yearOfBirth,shortDescription,longDescription,imageUrl,medicine,isFed,lastFed,showButton,  setAnimalList, animalList, feedStatut}:Props ) => {
   const [image, setimage] = useState<string>('start')
 
 
@@ -72,9 +74,10 @@ const onClickFeedAnimal = (id:number) => {
       {longDescription? <p> {longDescription}</p> : ''}
      { medicine? <p>{medicine}</p> : ''}
   {/*     <p>Matad: {isFed ? 'Ja' : 'Nej'}</p> */}
-      <p>Senast matad: {lastFed}</p>
+    <section className='animalContainer___FoodStatusContainer'> <p>Senast matad: {lastFed}</p> <Heart feel={feedStatut}  /></section> 
 <section className={showButton ?'animalContainer___btnContainer':'animalContainer___btnContainer--one'}> 
 <button className={showButton ? '': 'animalContainer___btnContainer___hide'}> <Link to={`/animal/${idAnimal}`} > Läs mer </Link></button> 
+
 <button className={isFed ? 'animalContainer___btnContainer___hollow': ''} onClick={(e) => isFed ? '' : onClickFeedAnimal(idAnimal) }>Mata</button>  </section>
 </section>
   )

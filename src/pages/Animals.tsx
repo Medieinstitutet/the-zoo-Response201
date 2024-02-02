@@ -26,7 +26,7 @@ useEffect(() => {
 <section className='manyObjectsContainer'> 
 {animalList.map((animalItem) => {
           return (
-          <section key={animalItem.id} className={animalItem.feedStatut}>
+          <section key={animalItem.id} >
 <Animal 
 idAnimal={animalItem.id}
     name={animalItem.name}
@@ -37,6 +37,7 @@ idAnimal={animalItem.id}
     showButton={true}
     animalList={animalList}
     setAnimalList={setAnimalList}
+    feedStatut={animalItem.feedStatut}
     />
     </section>
 )

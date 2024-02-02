@@ -38,7 +38,7 @@ return {...animalItem}
 {animal.map((animalItem) => {
         if (animalItem) {
           return (
-            <section key={animalItem.id} className={animalItem.feedStatut}>
+            <section key={animalItem.id} >
         <Animal     
         idAnimal={animalItem.id}
 name={animalItem.name}
@@ -51,7 +51,8 @@ medicine={animalItem.medicine}
 isFed={animalItem.isFed}
 lastFed={animalItem.lastFed} showButton={false}  
 animalList={animalList}
-setAnimalList={setAnimalList}              />
+setAnimalList={setAnimalList} 
+feedStatut={animalItem.feedStatut}             />
         </section>
 )
         }
