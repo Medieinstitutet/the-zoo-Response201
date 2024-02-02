@@ -97,7 +97,15 @@ padding:  v.$padding-element-heigth 0;
   padding: v.$padding-element-heigth v.$padding-element-width;
   justify-content: space-between;
   align-items: start;
-  background-color: rgba(188, 142, 237, 0.073);
+  /* background-color: rgba(188, 142, 237, 0.073); */
   border-radius:  v.$border-radius;
   box-shadow: #00000039 5px 4px 10px, inset 2px 2px 20px rgba(255, 255, 255, 0.281), inset -2px -2px 5px rgba(28, 28, 28, 0.433);
 }
+
+
+.urgent{background-color: rgb(128, 0, 30);}
+
+ .hungry{ background-color: rgb(255, 140, 0);}
+
+
+  .full{background-color: rgb(42, 165, 46);}

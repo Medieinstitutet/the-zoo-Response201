@@ -7,9 +7,14 @@ import Animals from "./pages/Animals";
 import { GetAnimalData } from "./component/GetAnimalData";
 import { Animal } from "./component/Animal";
 import OneAnimal from "./pages/OneAnimal";
+import { CheckHunger } from "./function/CheckHunger";
+import { useEffect } from "react";
 
 function App() {
   GetAnimalData()
+
+
+  
 
   return (
     <Routes>

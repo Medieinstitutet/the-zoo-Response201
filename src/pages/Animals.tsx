@@ -1,10 +1,24 @@
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AnimalModel } from '../models/AnimalModel';
 import { Animal } from '../component/Animal';
-import moment from 'moment';
-import { OnClickFeedAnimal } from '../function/OnClickFeedAnimal';
+import { CheckHunger } from '../function/CheckHunger';
 const Animals = () => {
   const [animalList, setAnimalList] = useState<AnimalModel[]>(JSON.parse(localStorage.getItem("animals")  || '[]'))
+
+
+  
+useEffect(() => {
+  CheckHunger({setAnimalList})
+
+  const intervalId = setInterval(() => {
+    CheckHunger({ setAnimalList });
+  }, 500); 
+
+     // Rensa upp intervallet när komponenten avmonteras
+     return () => clearInterval(intervalId);
+
+}, [])
+
 
 
   return (<article>
@@ -12,7 +26,7 @@ const Animals = () => {
 <section className='manyObjectsContainer'> 
 {animalList.map((animalItem) => {
           return (
-          <section key={animalItem.id}>
+          <section key={animalItem.id} className={animalItem.feedStatut}>
 <Animal 
 idAnimal={animalItem.id}
     name={animalItem.name}

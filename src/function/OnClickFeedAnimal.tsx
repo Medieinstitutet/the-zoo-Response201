@@ -1,6 +1,6 @@
 import moment from 'moment'
-import React from 'react'
 import { AnimalModel } from '../models/AnimalModel'
+
 
 export const OnClickFeedAnimal = (id:number, animalList:AnimalModel[]) => {
     
@@ -10,6 +10,7 @@ export const OnClickFeedAnimal = (id:number, animalList:AnimalModel[]) => {
          if(feedAnimal){
       
       localStorage.setItem('animals', JSON.stringify(feedAnimal))
+   
      return feedAnimal
          }
          

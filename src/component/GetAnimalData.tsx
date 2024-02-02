@@ -22,6 +22,7 @@ if (shouldUpdate) {
           response.data.map(item => ({
             ...item,
             lastFed: moment(item.lastFed).format('YYYY-MM-DD HH:mm'),
+            feedStatut:'full'
           }))
         )
       );

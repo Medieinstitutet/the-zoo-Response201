@@ -11,4 +11,5 @@ imageUrl:string;
 medicine:string;
 isFed:boolean;
 lastFed: string;
+feedStatut?:string
 }

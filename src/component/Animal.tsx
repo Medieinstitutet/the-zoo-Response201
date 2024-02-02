@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import placeholder from '../assets/images/placeholder.jpg'
 import { AnimalModel } from '../models/AnimalModel';
 import { OnClickFeedAnimal } from '../function/OnClickFeedAnimal';
+import moment from 'moment';
+import { CheckHunger } from '../function/CheckHunger';
 interface Animal {
     idAnimal:number;
     name:string;
@@ -21,11 +23,28 @@ interface Function{
   setAnimalList:  (animalList: AnimalModel[]) => void;
 }
 interface Props extends Animal, Function {}
-export const Animal = ({idAnimal, name,latinName,yearOfBirth,shortDescription,longDescription,imageUrl,medicine,isFed,lastFed, showButton,  setAnimalList, animalList}:Props ) => {
+export const Animal = ({idAnimal, name,latinName,yearOfBirth,shortDescription,longDescription,imageUrl,medicine,isFed,lastFed,showButton,  setAnimalList, animalList}:Props ) => {
   const [image, setimage] = useState<string>('start')
 
 
-  
+
+
+
+  let newDate = moment(new Date());
+  const duration = moment.duration(newDate.diff(lastFed));
+   const hours = duration.asHours();
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 const onClickFeedAnimal = (id:number) => {
@@ -34,14 +53,12 @@ const onClickFeedAnimal = (id:number) => {
      setAnimalList(updatedAnimalList)
 }
   
-  
-
 
 
 
 
   return (
-<section className='standardContainer animalContainer'>
+<section className='standardContainer animalContainer '>
 <section className='animalContainer___nameAndImg'>
 <h2>{name} <span className='animalContainer___nameAndImg__latinName'> {latinName ? `(${latinName})`: ''}</span> </h2>
       <section className='animalContainer___nameAndImg___imgContainer'> <img  
