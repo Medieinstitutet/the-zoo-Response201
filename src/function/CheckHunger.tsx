@@ -2,14 +2,8 @@ import moment from 'moment';
 import React, {  useEffect, useState } from 'react'
 import { AnimalModel } from '../models/AnimalModel';
 
-interface CheckHungerProps {
-    setAnimalList:  React.Dispatch<React.SetStateAction<AnimalModel[]>>
-    
-  }
 
-export const CheckHunger = ({setAnimalList}:CheckHungerProps) =>  {
-
-
+export const CheckHunger = () =>  {
         const animalList = JSON.parse(localStorage.getItem("animals") || '[]') as AnimalModel[];
         const newDate = moment(new Date());
         const newList:AnimalModel[] = animalList.map((animal: AnimalModel) => {
@@ -28,7 +22,6 @@ export const CheckHunger = ({setAnimalList}:CheckHungerProps) =>  {
 
         });
 
-  setAnimalList(newList);
   localStorage.setItem('animals',  JSON.stringify(newList))
-
+return newList
 };

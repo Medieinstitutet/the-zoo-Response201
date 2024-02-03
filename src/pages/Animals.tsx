@@ -7,17 +7,7 @@ const Animals = () => {
 
 
   
-useEffect(() => {
-  CheckHunger({setAnimalList})
 
-  const intervalId = setInterval(() => {
-    CheckHunger({ setAnimalList });
-  }, 500); 
-
-     // Rensa upp intervallet när komponenten avmonteras
-     return () => clearInterval(intervalId);
-
-}, [])
 
 
 
@@ -25,6 +15,7 @@ useEffect(() => {
     <h2>Alla våra djur</h2>
 <section className='manyObjectsContainer'> 
 {animalList.map((animalItem) => {
+
           return (
           <section key={animalItem.id} >
 <Animal 

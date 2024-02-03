@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import placeholder from '../assets/images/placeholder.jpg'
 import { AnimalModel } from '../models/AnimalModel';
@@ -39,16 +39,27 @@ export const Animal = ({idAnimal, name,latinName,yearOfBirth,shortDescription,lo
 
 
 
+  /* kallar checkHunger vid start, engång i minuten eller så fort lastfed ändras   */
+
+   useEffect(() => {
+  let updatedAnimalList = CheckHunger()
+  const intervalId = setInterval(() => {
+    let  updatedAnimalList = CheckHunger();
+    setAnimalList(updatedAnimalList) 
+      }, 60000 ); 
+  
+   setAnimalList(updatedAnimalList) 
+       // Rensa upp intervallet när komponenten avmonteras
+       return () => clearInterval(intervalId);
+  
+  }, [lastFed])
 
 
 
 
 
 
-
-
-
-
+/* kallar feedanimal funktion som uppdaterar lastfed för det aktuella djuret */
 const onClickFeedAnimal = (id:number) => {
   let updatedAnimalList = OnClickFeedAnimal(id, animalList) 
   if(updatedAnimalList && setAnimalList)
