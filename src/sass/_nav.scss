@@ -2,8 +2,8 @@
 @use 'mixins';
 
 nav {
-  background-color: white;
-  background-image: linear-gradient(to right bottom, #f9e5f1, #f4e1f2, #ecddf4, #e3daf6, #d7d8f7, #cedaf9, #c5dbf9, #bcddf7, #bae1f4, #bae4f0, #bee7eb, #c4e9e6);
+ 
+filter: invert(-100);
 
   width: 100%;
   display: flex;
@@ -12,7 +12,6 @@ nav {
   position: sticky;
   top: 0;
   height: clamp(2rem, 10vh, 3.5rem);
-
   z-index: 100;
 }
 

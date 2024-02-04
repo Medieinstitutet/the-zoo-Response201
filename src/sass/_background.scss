@@ -1,0 +1,49 @@
+
+@use 'variables' as v;
+
+
+.particle {
+
+  border-radius: 50%;
+  box-shadow: 0px 0px 2.8px 0 v.$primary-background-color inset, 0px 0px 2.8px 0 v.$primary-background-color inset;
+  position: absolute;
+
+  filter: blur(250px);
+}
+
+.particleOne {
+  z-index: 1;
+  background-color: v.$background-color1;
+  box-shadow: 1px 1px 5rem v.$background-color1;
+}
+
+.particleTwo {
+  z-index: 1;
+  background-color: v.$background-color2;
+  box-shadow: 1px 1px 1rem v.$background-color2;
+}
+
+
+/* change each partice, make them lite uniq( motion, size,  ect */
+@for $i from 1 through 20 {
+  @keyframes particle-animation-#{$i} {
+    100% {
+      transform: translate3d((random(110) *  1vw ), (random(10) * -1vh + (-150vh)), (random(100) * 1px));
+    }
+  }
+
+  .particle:nth-child(#{$i}) {
+    animation: particle-animation-#{$i} 100s linear  infinite;
+    $size: random(20) + 15 + rem;
+    height: $size;
+    width: $size;
+    animation-delay: $i * 2s;
+    transform: translate3d((random(110) * -1vw ), (random(100) * 1vh), (random(100) * - 1px));
+  }
+}
+
+.particle-container {
+  position: absolute;
+
+
+}

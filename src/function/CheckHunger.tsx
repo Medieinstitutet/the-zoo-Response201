@@ -10,11 +10,11 @@ export const CheckHunger = () =>  {
           const duration = moment.duration(newDate.diff(animal.lastFed));
           const hours = duration.asMinutes();
       
-          if( hours >= 5 ){
+          if( hours >= 59 ){
             return { ...animal, isFed: false, feedStatut: 'urgent' }}
 
 
-          else if(hours >= 2 ){
+          else if(hours >= 10 ){
             return { ...animal, isFed: false, feedStatut: 'hungry' }}
 
           else{

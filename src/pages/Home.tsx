@@ -1,5 +1,6 @@
 import React from 'react'
-import { Heart } from '../component/Heart'
+import image from '../assets/images/header.jpg'
+import { Background } from '../component/Background'
 
 
 
@@ -9,28 +10,29 @@ const Home = () => {
   
   return (
   
-  
-  <article> 
+  <> 
+<section className='headerContainer'>
+<header>
 
+
+<Background />
+<h1 className='text'>Mata djuren</h1>
+
+<h1 className='text-shadow'>Mata djuren</h1>
+
+<img src={image} alt="background"  />
+
+    </header>
+    </section>
+  <article className=''> 
 <section className='manyObjectsContainer'>
 
-<section className='standardContainer'> 
-
-<Heart />
-
 </section>
-
-<section className='standardContainer'> hello</section>
-
-<section className='standardContainer'> hello</section>
-
-<section className='standardContainer'> hello</section>
-
-<section className='standardContainer'> hello</section>
-
-<section className='standardContainer'> hello</section>
-</section>
-  </article>)
+  </article>
+  
+  
+  </>
+  )
  
 }
 
