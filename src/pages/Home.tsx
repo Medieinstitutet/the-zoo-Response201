@@ -19,12 +19,12 @@ const Home = () => {
 <h1 className='text'>Mata djuren</h1>
 
 <h1 className='text-shadow'>Mata djuren</h1>
+<section className='imageContainer'> <img src={image} alt="background"  /></section>
 
-<img src={image} alt="background"  />
 
     </header>
     </section>
-  <article className=''> 
+  <article className='HomeContainer'> 
 <section className='manyObjectsContainer'>
 
 </section>

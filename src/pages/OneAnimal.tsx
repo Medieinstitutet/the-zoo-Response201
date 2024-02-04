@@ -2,6 +2,7 @@ import React, {  useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { AnimalModel } from '../models/AnimalModel';
 import { Animal } from '../component/Animal';
+import { Background } from '../component/Background';
 
 
 
@@ -16,16 +17,16 @@ return {...animalItem}
   }
 })
   return (
-  
-  
-  <article className='OneAnimalContainer'>
+
+  <article > 
+
 
 
 
 {animal.map((animalItem) => {
         if (animalItem) {
           return (
-            <section key={animalItem.id} >
+           
         <Animal     
         idAnimal={animalItem.id}
 name={animalItem.name}
@@ -40,7 +41,7 @@ lastFed={animalItem.lastFed} showButton={false}
 animalList={animalList}
 setAnimalList={setAnimalList} 
 feedStatut={animalItem.feedStatut}             />
-        </section>
+    
 )
         }
       })}
@@ -49,8 +50,7 @@ feedStatut={animalItem.feedStatut}             />
 
 
 
-
-  </article>)}
+ </article>)}
 
 
 export default OneAnimal

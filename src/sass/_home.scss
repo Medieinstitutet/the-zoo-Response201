@@ -40,20 +40,38 @@ position: absolute;
 
     .text-shadow{
         font-size: clamp(2rem, 10vw, 15rem);
-        text-shadow: 5px 0px 2px black;
+        text-shadow: 0.25vw 0px 2px black;
         z-index: 8;
     }
 
+.imageContainer{
+    position: absolute;
+    width: 30vw;
+    z-index: 0;
+    right: 0%;
+    
+ 
 
 
-   img{
-position: absolute;
-width: 40vw;
-z-index: 0;
-right: 0%;
+    img{
+ 
+     
+  width: 100%;
+
+   
+ 
+    } 
+    
+}
+
+ 
 
 
-   } 
+}
 
+
+.HomeContainer{
+
+background-color: v.$primary-background-color;
 
 }

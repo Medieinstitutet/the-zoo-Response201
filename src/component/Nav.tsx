@@ -1,4 +1,5 @@
 import { Outlet, Link  } from 'react-router-dom'
+import { Background } from './Background'
 
 const Nav = () => {
 
@@ -8,7 +9,10 @@ const Nav = () => {
 
     return (
         <>
+
+       
           <nav>
+          
             <ul>
               <li>
                 <Link to="/" className='link'>Home</Link>
@@ -22,8 +26,8 @@ const Nav = () => {
               
             </ul>
           </nav>
-         
-           
+  
+        <Background />
 
           <Outlet />
         </>
