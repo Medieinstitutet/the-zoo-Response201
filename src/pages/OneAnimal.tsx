@@ -10,7 +10,7 @@ import { Background } from '../component/Background';
 const OneAnimal = () => {
   const [animalList, setAnimalList] = useState<AnimalModel[]>(JSON.parse(localStorage.getItem("animals")  || '[]'))
     const { id } = useParams();
-
+    window.scrollTo(0, 0);
     const animal:AnimalModel[] = animalList.filter((animalItem:AnimalModel) => {
   if (id !== undefined && animalItem.id === +id) {
 return {...animalItem}

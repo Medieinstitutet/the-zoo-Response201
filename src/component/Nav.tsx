@@ -15,12 +15,12 @@ const Nav = () => {
           
             <ul>
               <li>
-                <Link to="/" className='link'>Home</Link>
+                <Link to="/" className='link'>Hem</Link>
               </li>
             
              <li>
 
-<Link to="/animals" className='link'>Animals</Link>
+<Link to="/animals" className='link'>Alla djur</Link>
 
              </li>
               

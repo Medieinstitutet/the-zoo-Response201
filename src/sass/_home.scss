@@ -7,10 +7,13 @@
 
 
 .homeArticle{
-
-    width: calc(102% + (v.$padding-article-width * 1) - 4px);
-margin:calc((v.$padding-article-width * -2 - 4px )) calc((v.$padding-article-width * -2 + 4px  )) ;
+height: 100%;
+min-height: 100vh;
+    width:100%;
+margin: calc( (v.$padding-element-heigth * -2)) 0;
 padding: 0;
+display: flex;
+align-items: center;
 
 
 }
@@ -20,7 +23,8 @@ padding: 0;
 
 .headerContainer{
 width: 100%;
-
+height: 100%;
+z-index: 10;
 }
 
 
@@ -63,7 +67,7 @@ position: absolute;
     position: absolute;
     width: 30vw;
     z-index: 0;
-    right: 2vw;
+right: 0;
     max-width: 48rem;
 padding: 2vh 0 0 0;
 
@@ -87,17 +91,36 @@ padding: 2vh 0 0 0;
 
 .HomeContainer{
 
+background-color: v.$primary-background-color;
+
+    width:100% ;
 
 
+z-index:8;
+ 
+display: flex;
+align-items: center;
+justify-content: center;
+  
 
-    background-color: v.$primary-background-color;
-
-    margin:0;
-
-padding: 0;
-
-    width: 100%;
-height: fit-content;
 
 
 }
+
+
+
+.homeSection{
+width: 90%;
+padding: 0 5rem;
+
+}
+
+.hungryAnimalsContainer{
+
+
+width: 100%;
+padding: 0 v.$padding-element-width;
+
+
+}
+

@@ -92,7 +92,7 @@ article {
 
   z-index: 10;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  justify-items: center;
+ 
 padding:   v.$padding-element-heigth 0;
   @include mixins.devices(tablet) {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -107,9 +107,8 @@ padding:   v.$padding-element-heigth 0;
 .standardContainer {
   height:calc(100% - (v.$padding-element-heigth * 2 ));
   width: calc(100% - (v.$padding-element-width * 2));
-  max-width: 1000px;
-  min-height: fit-content;
-  margin: 0;
+  max-width: 700px;
+
   display: flex;
   padding: v.$padding-element-heigth v.$padding-element-width;
   justify-content: space-between;

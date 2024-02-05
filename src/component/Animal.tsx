@@ -11,9 +11,9 @@ interface Animal {
     name:string;
     latinName?:string;
     yearOfBirth?:number;
-    shortDescription:string;
+    shortDescription?:string;
     longDescription?:string;
-    imageUrl:string;
+    imageUrl?:string;
     medicine?:string;
     isFed:boolean;
     lastFed: string;
@@ -74,18 +74,24 @@ const onClickFeedAnimal = (id:number) => {
 <section className='standardContainer animalContainer '>
 <section className='animalContainer___nameAndImg'>
 <h2>{name} <span className='animalContainer___nameAndImg__latinName'> {latinName ? `(${latinName})`: ''}</span> </h2>
-      <section className='animalContainer___nameAndImg___imgContainer'> <img  
+     {imageUrl ? <section className='animalContainer___nameAndImg___imgContainer'> <img  
       src={image === 'showimage' ? imageUrl : placeholder} alt={name}
       onLoad={() => { if(image === 'start'){setimage('showimage')}}}
       onError={() =>{setimage('stop')} }
       /></section>
+       : ''} 
+      
+      
+      
+      
       </section>
-      {yearOfBirth? <p>{yearOfBirth}</p> :''}
+     
       <p>{shortDescription}</p>
       {longDescription? <p> {longDescription}</p> : ''}
-     { medicine? <p>{medicine}</p> : ''}
-  {/*     <p>Matad: {isFed ? 'Ja' : 'Nej'}</p> */}
-    <section className='animalContainer___FoodStatusContainer'> <p>Senast matad: {lastFed}</p> <Heart feel={feedStatut}  /></section> 
+      <section className='animalContainer___medecinAndBirthFoodContainer'> 
+     { medicine?  <p>Mediciner: {medicine}</p> : ''}  {yearOfBirth? <p>Född: {yearOfBirth}</p> :''}     <section className='animalContainer___FoodStatusContainer'> <p>Senast matad: {lastFed}</p> <Heart feel={feedStatut}  /></section> 
+     </section>
+
 <section className={showButton ?'animalContainer___btnContainer':'animalContainer___btnContainer--one'}> 
 <button className={showButton ? '': 'animalContainer___btnContainer___hide'}> <Link to={`/animal/${idAnimal}`} > Läs mer </Link></button> 
 

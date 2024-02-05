@@ -3,30 +3,27 @@
 .oneAnimalContainer{
 
 
-    height: fit-content;
-    min-height: 95vh;
+    min-height: 90vh;
 
 }
     
     .oneAnimalSection{
         z-index: 10;
-height: calc(95vh - 6rem) ;
+height: calc(100vh - 6rem) ;
 
 display: flex;
 justify-content: center;
 align-items: center;
-min-height: 60rem ;
+min-height: 52rem ;
 padding:  0;
 overflow: hidden;
-
-
 
 
     } 
 
 
  .hello{
-
+    overflow: hidden;
 padding-top: 2rem;
 
  }
