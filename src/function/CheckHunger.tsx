@@ -8,13 +8,13 @@ export const CheckHunger = () =>  {
         const newDate = moment(new Date());
         const newList:AnimalModel[] = animalList.map((animal: AnimalModel) => {
           const duration = moment.duration(newDate.diff(animal.lastFed));
-          const hours = duration.asMinutes();
+          const hours = duration.hours();
       
-          if( hours >= 59 ){
+          if( hours >= 4 ){
             return { ...animal, isFed: false, feedStatut: 'urgent' }}
 
 
-          else if(hours >= 10 ){
+          else if(hours >= 3 ){
             return { ...animal, isFed: false, feedStatut: 'hungry' }}
 
           else{

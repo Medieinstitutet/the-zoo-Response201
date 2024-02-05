@@ -13,8 +13,8 @@ const Animals = () => {
 
   return (<article className='animalArticel'>
 
- <Background /> 
 
+<Background />
 
     <h2>Alla våra djur</h2>
 <section className='manyObjectsContainer'> 

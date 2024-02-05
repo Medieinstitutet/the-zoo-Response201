@@ -1,20 +1,32 @@
 @use 'variables' as v;
 
+.oneAnimalContainer{
 
 
+    height: fit-content;
+    min-height: 95vh;
 
-
-
-
-
-.OneAnimalContainer{
-height: fit-content;
-min-height: 100%;
-width: 90%;
-font-size: clamp(1rem, 2vw, 1.2rem);
-display: flex;
-align-items: center;
-justify-content: center;
-margin: 0 0 0vh 0;
-padding: 0;
 }
+    
+    .oneAnimalSection{
+        z-index: 10;
+height: calc(95vh - 6rem) ;
+
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 60rem ;
+padding:  0;
+overflow: hidden;
+
+
+
+
+    } 
+
+
+ .hello{
+
+padding-top: 2rem;
+
+ }

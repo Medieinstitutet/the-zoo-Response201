@@ -10,12 +10,12 @@ const Home = () => {
   
   return (
   
-  <> 
+  <article className='homeArticle'> 
 <section className='headerContainer'>
 <header>
 
 
-<Background />
+
 <h1 className='text'>Mata djuren</h1>
 
 <h1 className='text-shadow'>Mata djuren</h1>
@@ -25,13 +25,15 @@ const Home = () => {
     </header>
     </section>
   <article className='HomeContainer'> 
+ 
 <section className='manyObjectsContainer'>
 
 </section>
+
   </article>
   
   
-  </>
+  </article>
   )
  
 }

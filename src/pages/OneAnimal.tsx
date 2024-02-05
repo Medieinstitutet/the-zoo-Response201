@@ -18,15 +18,17 @@ return {...animalItem}
 })
   return (
 
-  <article > 
+<article className='oneAnimalContainer'> 
 
-
+<section className='oneAnimalSection'> 
 
 
 {animal.map((animalItem) => {
         if (animalItem) {
           return (
-           
+            <section className='hello' > 
+          
+
         <Animal     
         idAnimal={animalItem.id}
 name={animalItem.name}
@@ -41,16 +43,30 @@ lastFed={animalItem.lastFed} showButton={false}
 animalList={animalList}
 setAnimalList={setAnimalList} 
 feedStatut={animalItem.feedStatut}             />
-    
+
+</section>
 )
         }
       })}
 
+</section>
 
 
+</article>
 
+ 
+ 
+ 
+ 
+ 
 
- </article>)}
+ 
+
+ 
+ 
+ 
+ 
+ )}
 
 
 export default OneAnimal

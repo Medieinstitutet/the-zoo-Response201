@@ -1,31 +1,46 @@
 @use 'variables' as v;
 
+
+
+
+
+
+
+.homeArticle{
+
+    width: calc(102% + (v.$padding-article-width * 1) - 4px);
+margin:calc((v.$padding-article-width * -2 - 4px )) calc((v.$padding-article-width * -2 + 4px  )) ;
+padding: 0;
+
+
+}
+
+
+
+
 .headerContainer{
 width: 100%;
-position: absolute;
 
 }
 
 
 
 header {
+    
     width: 100%;
     height: 100%;
-    max-height: 45rem;
-    min-height: 30rem;
+    max-height: 55rem;
+    min-height: 35rem;
     position: relative;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
 background-color: v.$primary-background-color;
     border-bottom: 2px v.$primary-color dashed;
 
-
-
+overflow: hidden;
 
     .text {
-
 position: absolute;
         z-index: 10;
         font-size: clamp(2rem, 10vw, 15rem);
@@ -48,9 +63,9 @@ position: absolute;
     position: absolute;
     width: 30vw;
     z-index: 0;
-    right: 0%;
-    
- 
+    right: 2vw;
+    max-width: 48rem;
+padding: 2vh 0 0 0;
 
 
     img{
@@ -72,6 +87,17 @@ position: absolute;
 
 .HomeContainer{
 
-background-color: v.$primary-background-color;
+
+
+
+    background-color: v.$primary-background-color;
+
+    margin:0;
+
+padding: 0;
+
+    width: 100%;
+height: fit-content;
+
 
 }

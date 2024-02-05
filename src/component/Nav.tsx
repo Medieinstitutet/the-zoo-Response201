@@ -8,7 +8,7 @@ const Nav = () => {
 
 
     return (
-        <>
+        < >
 
        
           <nav>
@@ -25,11 +25,13 @@ const Nav = () => {
              </li>
               
             </ul>
+            
           </nav>
-  
-        <Background />
+          <section className='all'>
+          <Background />
 
           <Outlet />
+          </section>
         </>
       )
 }
