@@ -6,14 +6,12 @@ import Nav from './component/Nav';
 import Animals from "./pages/Animals";
 import { GetAnimalData } from "./component/GetAnimalData";
 import OneAnimal from "./pages/OneAnimal";
-import { Background } from "./component/Background";
+
 
 
 function App() {
-  GetAnimalData()
 
-
-  
+ GetAnimalData()
 
   return (
     <Routes>

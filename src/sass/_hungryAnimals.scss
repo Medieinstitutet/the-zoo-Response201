@@ -1,0 +1,17 @@
+@use 'variables' as v;
+
+
+.hungryAnimalsContainer{
+
+
+    background-color: v.$primary-background-color;
+width: 100%;
+padding:  v.$padding-article-width;
+    &___text--NoHunger{
+height: 100%;
+min-height: fit-content;
+text-align: center;
+
+    }
+
+}

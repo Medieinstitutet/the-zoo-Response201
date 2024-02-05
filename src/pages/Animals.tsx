@@ -4,14 +4,14 @@ import { Animal } from '../component/Animal';
 import { Background } from '../component/Background';
 const Animals = () => {
   const [animalList, setAnimalList] = useState<AnimalModel[]>(JSON.parse(localStorage.getItem("animals")  || '[]'))
-
+ 
 
   
 
 
 
 
-  return (<article className='animalArticel'>
+  return (<article className='animalArticle'>
 
 
 <Background />

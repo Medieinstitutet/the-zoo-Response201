@@ -1,7 +1,11 @@
 @use 'variables' as v;
 @use 'mixins';
 
-
+.animalArticle{
+height: fit-content;
+min-height: 100%;
+    background-image:v.$linear-gradient;
+}
 
 .animalContainer {
     flex-direction: column;
@@ -114,7 +118,7 @@ justify-content: space-between;
         button {
             height: 30px;
             width: clamp(1rem, 40%, 5rem);
-
+z-index: 10;
 
         }
 

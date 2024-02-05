@@ -6,6 +6,7 @@ import { OnClickFeedAnimal } from '../function/OnClickFeedAnimal';
 import moment from 'moment';
 import { CheckHunger } from '../function/CheckHunger';
 import { Heart } from './Heart';
+import { Click } from './Nav';
 interface Animal {
     idAnimal:number;
     name:string;
@@ -93,7 +94,7 @@ const onClickFeedAnimal = (id:number) => {
      </section>
 
 <section className={showButton ?'animalContainer___btnContainer':'animalContainer___btnContainer--one'}> 
-<button className={showButton ? '': 'animalContainer___btnContainer___hide'}> <Link to={`/animal/${idAnimal}`} > Läs mer </Link></button> 
+<button className={showButton ? '': 'animalContainer___btnContainer___hide'}> <Link to={`/animal/${idAnimal}`} onClick={() => Click()} > Läs mer </Link></button> 
 
 <button className={isFed ? 'animalContainer___btnContainer___hollow': ''} onClick={(e) => isFed ? '' : onClickFeedAnimal(idAnimal) }>Mata</button>  </section>
 </section>

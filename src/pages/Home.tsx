@@ -1,23 +1,15 @@
 import React, { useState } from 'react'
 import image from '../assets/images/header.jpg'
-import { AnimalModel } from '../models/AnimalModel'
-
 import ShowHungryanimals from '../component/ShowHungryanimals'
 import { Background } from '../component/Background'
 
 
 
 
-
-
-const Home = () => {
-
- 
+const Home =  () => {
 
 
 
-
-  
   return (
   
   <article className='homeArticle'> 

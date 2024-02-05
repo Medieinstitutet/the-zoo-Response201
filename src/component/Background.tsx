@@ -12,12 +12,12 @@ export const Background = () => {
         if(i % 2 === 0){
 
             particleArray.push(
-<div className={"particle particleOne"}>  </div>)
+<div  className={"particle particleOne"} key={i}>  </div>)
 
         }
         else{
             particleArray.push(
-                <div className={"particle particleTwo"}>  </div> )
+                <div className={"particle particleTwo"}  key={i}>  </div> )
 
 
         }
@@ -31,7 +31,7 @@ return(
 <section className="backgroundContainer">          
 <section className="particle-container">
 
-{particleArray.map(item => item)}
+{particleArray.map(item =>  item  )}
 
 
 
