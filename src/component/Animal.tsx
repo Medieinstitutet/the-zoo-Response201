@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 import placeholder from '../assets/images/placeholder.jpg'
 import { AnimalModel } from '../models/AnimalModel';
 import { OnClickFeedAnimal } from '../function/OnClickFeedAnimal';
-import moment from 'moment';
 import { CheckHunger } from '../function/CheckHunger';
 import { Heart } from './Heart';
-import { Click } from './Nav';
+
 interface Animal {
     idAnimal:number;
     name:string;
@@ -32,39 +31,33 @@ export const Animal = ({idAnimal, name,latinName,yearOfBirth,shortDescription,lo
 
 
 
-
-  let newDate = moment(new Date());
-  const duration = moment.duration(newDate.diff(lastFed));
-   const hours = duration.asHours();
-
-
-
-
-  /* kallar checkHunger vid start, engång i minuten eller så fort lastfed ändras   */
-
-   useEffect(() => {
-  let updatedAnimalList = CheckHunger()
-  const intervalId = setInterval(() => {
+ /* timer => /* kallar checkHunger vid start samt engång i minuten */
+ 
+   setInterval(() => {
     let  updatedAnimalList = CheckHunger();
     setAnimalList(updatedAnimalList) 
       }, 60000 ); 
   
-   setAnimalList(updatedAnimalList) 
-       // Rensa upp intervallet när komponenten avmonteras
-       return () => clearInterval(intervalId);
-  
-  }, [lastFed])
+
+ 
 
 
 
 
 
 
-/* kallar feedanimal funktion som uppdaterar lastfed för det aktuella djuret */
+/* kallar feedanimal funktion som uppdaterar lastfed för det aktuella djuret, samt kör  funktionen CheckHunger  */
 const onClickFeedAnimal = (id:number) => {
   let updatedAnimalList = OnClickFeedAnimal(id, animalList) 
+ 
   if(updatedAnimalList && setAnimalList)
      setAnimalList(updatedAnimalList)
+
+     let  updatedAnimalListcheck = CheckHunger();
+     setAnimalList(updatedAnimalListcheck) 
+
+
+
 }
   
 
@@ -94,7 +87,7 @@ const onClickFeedAnimal = (id:number) => {
      </section>
 
 <section className={showButton ?'animalContainer___btnContainer':'animalContainer___btnContainer--one'}> 
-<button className={showButton ? '': 'animalContainer___btnContainer___hide'}> <Link to={`/animal/${idAnimal}`} onClick={() => Click()} > Läs mer </Link></button> 
+<button className={showButton ? '': 'animalContainer___btnContainer___hide'}> <Link to={`/animal/${idAnimal}`} > Läs mer </Link></button> 
 
 <button className={isFed ? 'animalContainer___btnContainer___hollow': ''} onClick={(e) => isFed ? '' : onClickFeedAnimal(idAnimal) }>Mata</button>  </section>
 </section>

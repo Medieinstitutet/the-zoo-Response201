@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import check from "../assets/lotties/heart.json";
 import Lottie  from "lottie-react";
 

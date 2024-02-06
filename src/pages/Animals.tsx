@@ -11,7 +11,7 @@ const Animals = () => {
 
 
 
-  return (<article className='animalArticle'>
+  return (<article className='animalArticle'  id='scrollTo'>
 
 
 <Background />

@@ -2,7 +2,7 @@ import React, {  useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { AnimalModel } from '../models/AnimalModel';
 import { Animal } from '../component/Animal';
-import { Background } from '../component/Background';
+
 
 
 
@@ -18,7 +18,7 @@ return {...animalItem}
 })
   return (
 
-<article className='oneAnimalContainer'> 
+<article className='oneAnimalContainer' id='scrollTo' > 
 
 <section className='oneAnimalSection'> 
 
@@ -26,7 +26,7 @@ return {...animalItem}
 {animal.map((animalItem) => {
         if (animalItem) {
           return (
-            <section className='hello' > 
+            <section key={animalItem.id} > 
           
 
         <Animal     
