@@ -4,6 +4,7 @@ import ShowHungryanimals from '../component/ShowHungryanimals'
 import { Background } from '../component/Background'
 import { GetAnimalData } from '../component/GetAnimalData'
 import { AnimalModel } from '../models/AnimalModel'
+import { Loading } from '../component/Loading'
 
 
 const Home =  () => {
@@ -19,9 +20,9 @@ GetAnimalData(setLoading, setAnimalList)
   <article className='homeArticle'  id='scrollTo'> 
 
 
-{!loading ?
 
- <>
+
+
 
 <section className='headerContainer'>
 
@@ -37,14 +38,18 @@ GetAnimalData(setLoading, setAnimalList)
   
     </section>
   <section className='HomeContainer'> 
+  {!loading ?
+
   <section className='HomeSection'>
 <ShowHungryanimals animalList={animalList} setAnimalList={setAnimalList} />
 </section>
-  </section>
-  </>
 
-: ''
+
+: <Loading />
 }
+  </section>
+ 
+
 
 
 
