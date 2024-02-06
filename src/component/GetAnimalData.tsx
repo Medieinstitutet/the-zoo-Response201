@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import axios from "axios"
 import moment from 'moment';
-
 import { AnimalModel } from '../models/AnimalModel';
 import { CheckHunger } from '../function/CheckHunger';
-
 export const GetAnimalData = (setLoading: (state:boolean) => void, setAnimalList: (state:AnimalModel[]) => void) => {
     const [animals, setAnimals] = useState<AnimalModel[]>(JSON.parse(localStorage.getItem("animals")  || '[]') )
-
-
     useEffect(() => {
 if(animals.length >= 1) return;
-
 const Data = async() => {
   if (shouldUpdate) { 
   try {
@@ -30,30 +25,17 @@ const Data = async() => {
           setAnimals(JSON.parse(localStorage.getItem("animals")  || '[]'))
             CheckHunger()
             setAnimalList(JSON.parse(localStorage.getItem("animals")  || '[]'))
-          
-  
-
-    
   } catch (error) {
     console.log('error')
   } finally{
-
-    setLoading(false)
-
+    setInterval(() => {
+      setLoading(false)
+        }, 3000 ); 
   }
    }
-
  }
-
-
 let shouldUpdate = true;
 Data()
-
-
 return () => { shouldUpdate = false}
-
  }) 
-
-
-
 }

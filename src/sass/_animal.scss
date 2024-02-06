@@ -120,17 +120,37 @@ justify-content: space-between;
             width: clamp(1rem, 40%, 5rem);
 z-index: 10;
 
+        
+
+
+       
+
+
+
+
+           &:hover {
+
+
+                cursor: url(https://cur.cursors-4u.net/cursors/cur-7/cur671.cur), pointer !important;
+
+            }
+
         }
 
 
-        .normalBtn {
+        .feedBtn {
 
 
 
 
-            &:hover {}
-
-        }
+            &:hover {
+ 
+ 
+                 cursor: url(https://cur.cursors-4u.net/food/foo-4/foo348.cur), pointer !important;
+ 
+             }
+ 
+         }
 
 
 

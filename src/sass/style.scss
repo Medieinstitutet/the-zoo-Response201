@@ -12,6 +12,7 @@
 
 
 
+
 #root,
 body {
 
@@ -30,7 +31,11 @@ body {
   -ms-overflow-style: none;
   font-family: 'Times New Roman', Times, serif;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
+
+  cursor: url(https://cur.cursors-4u.net/cursors/cur-7/cur671.cur), auto !important;
+  
 }
+
 
 
 body::-webkit-scrollbar {

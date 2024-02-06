@@ -5,20 +5,11 @@ import './sass/style.scss';
 import { BrowserRouter,  } from "react-router-dom";
 import { ScrollToTop } from './function/ScrollToTop';
 
-
-
-
-
-
-
-
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
         <BrowserRouter> 
 
 <ScrollToTop />
-
- 
  <App />
 
 
