@@ -66,7 +66,7 @@ const hungryAnimal:AnimalModel[] =  animalList.filter((animalItem:AnimalModel) =
 
 
   {hungryAnimal.length >= 1 ?
-  <section> 
+    <section className='hungryAnimalsContainer'>
     <h2>Djur som behöver mat snart</h2>
    
   <section className='manyObjectsContainerHome'>

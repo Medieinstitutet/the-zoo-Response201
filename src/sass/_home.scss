@@ -8,8 +8,8 @@
 
 .homeArticle{
     padding: 0;
-height:fit-content;
-min-height: calc(100% + v.$padding-element-heigth * 2);
+
+min-height: calc(100vh + v.$padding-element-heigth * 2 );
     width:100%;
 margin: calc( (v.$padding-element-heigth * -2)) 0;
 
@@ -17,35 +17,25 @@ display: flex;
 align-items: center;
 background-color: v.$primary-background-color;
 
+
 }
 
 
 
 
 .headerContainer{
-width: 100%;
-height: 100%;
-min-height: 60vh;
+
 z-index: 10;
 border-bottom: 2px v.$primary-color dashed;
-display: flex;
-align-items: center;
-justify-content: center;
-}
 
-
-
-header {
     position: relative;
     width: 100%;
     height: 60%;
-    min-height: 60vh;
-    position: relative;
+    min-height: 45rem;
     display: flex;
     align-items: center;
     justify-content: center;
-background-color: v.$primary-background-color;
-    
+background-color: v.$primary-background-color;   
 overflow: hidden;
 
     .text {
@@ -92,14 +82,15 @@ padding: 2vh 0 0 0;
 
 .HomeContainer{
 
-background-color: v.$primary-background-color;
-width:100% ;
-height: fit-content;
-min-height:calc(40vh - (v.$padding-element-heigth * 2));
+background-color:  v.$primary-background-color ;
+width:100%;
+margin: calc( (v.$padding-element-heigth * -2)) 0;
+height:fit-content;
+min-height: calc(40vh - (v.$padding-element-heigth * 1 ) + 4px);
 z-index:8;
-display: flex;
-align-items: center;
+
 padding: v.$padding-element-heigth 0;
+margin: 0;
 
 
 }
@@ -107,9 +98,10 @@ padding: v.$padding-element-heigth 0;
 
 
 .homeSection{
-width: 90%;
-height: fit-content;
-min-height: 100%;
+
+padding: v.$padding-element-heigth 0;
+border: 2px red solid;
+background-color: red;
 }
 
 

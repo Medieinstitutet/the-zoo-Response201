@@ -14,7 +14,7 @@ const Home =  () => {
   
   <article className='homeArticle'> 
 <section className='headerContainer'>
-<header>
+
 
 <Background />
 
@@ -24,11 +24,12 @@ const Home =  () => {
 <section className='imageContainer'> <img src={image} alt="background"  /></section>
 
 
-    </header>
+  
     </section>
   <section className='HomeContainer'> 
+  <section className='HomeSection'>
 <ShowHungryanimals />
-
+</section>
   </section>
   
   
