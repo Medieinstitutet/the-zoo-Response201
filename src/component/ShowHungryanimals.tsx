@@ -5,7 +5,7 @@ interface Function{
   setAnimalList:  (animalList: AnimalModel[]) => void;
 }
 export const ShowHungryanimals =  ({animalList, setAnimalList}: Function) => { 
-if(animalList.length >= 1){
+
   const urgentHungryAnimal:AnimalModel[] =  animalList.filter((animalItem:AnimalModel) => {
 if ( animalItem.feedStatut === 'urgent') {
 return {...animalItem}
@@ -59,5 +59,5 @@ const hungryAnimal:AnimalModel[] =  animalList.filter((animalItem:AnimalModel) =
 {  urgentHungryAnimal.length <= 0 && hungryAnimal.length  <= 0 ?   <h2>Alla djur har fått mat </h2> : ''        }
 </section>
   </section>)}
-}
-export default ShowHungryanimals
+
+
